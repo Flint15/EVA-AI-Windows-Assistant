@@ -3,12 +3,13 @@ import logging
 from typing import Union
 from pathlib import Path
 from PyQt5.QtWidgets import QApplication
-from message_processor import MessageProcessor
-from UI_Threads import LLMStreamingThread
-from UI import MainWindow
-import config, functions
-import load_user_data
-import llm
+from src.core import message_processor
+from src.ui import Threads
+from src.ui import main
+from src.core import config
+from src.features import functions
+from src.data import load_user_data
+from src.core import llm
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -20,7 +21,7 @@ Main entry point for the EVA application. This script initializes the main windo
 LLM, and handles user input (both text and voice) using PyQt5.
 """
 
-class MainApp(MainWindow):
+class MainApp(main.MainWindow):
     """
     Main application window class for EVA.
     Inherits from MainWindow and sets up message processing, LLM, and voice input handling.
@@ -42,7 +43,7 @@ class MainApp(MainWindow):
         logger.info(f'Current working directory - {config.CWD}')
         
         # Initialize core components
-        self.processor = MessageProcessor(config, functions)
+        self.processor = message_processor.MessageProcessor(config, functions)
         self.llm = llm.LLM()
         
         # Set up message handling
@@ -91,7 +92,7 @@ class MainApp(MainWindow):
             print(page_id)
             print(self.existed_pages)
             print(config.current_page)
-            self.current_llm_thread = LLMStreamingThread(
+            self.current_llm_thread = Threads.LLMStreamingThread(
                 chat_page=config.current_page,
                 processed_result=processed_result,
                 user_message_type=user_message_type
