@@ -14,11 +14,11 @@ import threading
 import logging
 import uuid
 import re
-from toggle_button_implamantation import ToggleButton
-import load_user_data
-import functions
-import config
-from llm import LLM
+from .toggle_button_implamantation import ToggleButton
+from src.data import load_user_data
+from src.features import functions
+from src.core import config
+from src.core import llm
 
 # Constants for icon paths
 ICON_PATHS = {
@@ -86,7 +86,7 @@ class Page(QWidget):
         self.page_id = uuid.uuid4().hex
         self.sidebar = sidebar
         self.ui_application = ui_application
-        self.llm = LLM()
+        self.llm = llm.LLM()
 
         self._last_llm_widget = None
         self._last_typing_widget = None

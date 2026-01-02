@@ -1,3 +1,4 @@
+anthropic==0.75.0
 comtypes==1.4.10
 psutil==7.0.0
 pycaw==20240210

@@ -2,7 +2,7 @@ from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
 import logging
-import config
+from src.core import config
 
 logger = logging.getLogger(__name__)
 

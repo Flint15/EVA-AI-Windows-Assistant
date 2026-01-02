@@ -1,4 +1,3 @@
-import config
 import json
 import os
 import logging

@@ -1,11 +1,11 @@
 from PyQt5.QtCore import QThread, pyqtSignal, QMutexLocker
 import logging
 import time
-from reorganizer import reorganize_by_extension
-import image_processing
-from open_exe import open_application
-from scaning import scan_for_program
-import config
+from src.features import reorganizer
+from src.features import image_processing
+from src.features import open_exe
+from src.features import scaning
+from src.core import config
 
 class LLMStreamingThread(QThread):
 	"""
@@ -25,9 +25,9 @@ class LLMStreamingThread(QThread):
 	streaming_finished = pyqtSignal()
 
 	functions_registry: dict = {
-		'opening': open_application,
-		'deletion': scan_for_program,
-		'reorganization': reorganize_by_extension,
+		'opening': open_exe.open_application,
+		'deletion': scaning.scan_for_program,
+		'reorganization': reorganizer.reorganize_by_extension,
 		'image processing': image_processing.grayscaling_image
 	}
 

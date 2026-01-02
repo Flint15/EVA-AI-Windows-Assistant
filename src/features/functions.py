@@ -17,7 +17,7 @@ import sched
 from src.audio import tts
 import locale
 import screen_brightness_control as sbc
-import math_func
+from src.features import math_func
 
 scheduling = sched.scheduler()
 calc = math_func.Calculator()

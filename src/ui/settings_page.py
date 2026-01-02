@@ -10,10 +10,10 @@ from PyQt5.QtCore import Qt, QSettings, QSize
 from pathlib import Path
 import threading
 import logging
-from Custom_Title_Bar import CustomTitleBar
-import save_user_settings
-import load_user_data
-import config
+from .Custom_Title_Bar import CustomTitleBar
+from src.data import save_user_settings
+from src.data import load_user_data
+from src.core import config
 
 # Constants for icon paths
 ICON_PATHS = {

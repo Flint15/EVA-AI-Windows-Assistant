@@ -4,7 +4,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email import encoders
 import os
-import config
+from src.core import config
 
 
 def send_mail_with_attachment(

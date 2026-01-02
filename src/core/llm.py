@@ -5,8 +5,8 @@ from PyQt5.QtCore import QMutexLocker
 from typing import Generator
 import logging
 import time
-from timing_decorator import functime
-import config
+from src.utils import timing_decorator
+from src.core import config
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -65,7 +65,7 @@ class LLM:
             '''}
         ]
 
-    @functime
+    @timing_decorator.functime
     def message_formater_stream(self, message: str = None) -> Generator[str, None, str]:
         """
         This method will format all messages into more understandable response with streaming mode.
@@ -107,7 +107,7 @@ class LLM:
 
         return complete_response
 
-    @functime
+    @timing_decorator.functime
     def chatgpt_stream(self, user_input: str = None) -> Generator[str, None, str]:
         """
         This method streams responses from ChatGPT LLM token by token and updates the UI in real-time.
@@ -147,7 +147,7 @@ class LLM:
 
         return complete_response
 
-    @functime
+    @timing_decorator.functime
     def claude_stream(self, user_input: str = None) -> Generator[str, None, str]:
         """
         This method streams responses from Claude LLM token by token and updates the UI in real-time.
@@ -189,7 +189,7 @@ class LLM:
 
         return complete_response
 
-    @functime
+    @timing_decorator.functime
     def deepseek_stream(self, user_input: str = None) -> Generator[str, None, str]:
         """
         This method is responsible for streaming responses from DeepSeek LLM.

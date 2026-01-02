@@ -1,18 +1,14 @@
 from dataclasses import dataclass
-from enum import Enum
 from src.core import config
 from src.features import functions
-from typing import Union, List, Dict, Callable, Optional, Tuple
+from typing import Union, Tuple
 import string
 import logging
-from llm import LLM
-from verb_object_extractor import Extractor
+from src.core import llm
+from src.core import verb_object_extractor
 import re
 from rapidfuzz import process, fuzz
 from threading import Thread
-from src.features import  scaning
-from src.features import  reminder
-from src.features import  reorganizer
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -51,8 +47,8 @@ class MessageProcessor:
         """
         self.config = config
         self.functions = functions
-        self.extractor = Extractor()   # NLP verb-object extractor
-        self.llm = LLM()               # Language Model instance
+        self.extractor = verb_object_extractor.Extractor()   # NLP verb-object extractor
+        self.llm = llm.LLM()               # Language Model instance
         logger.info('Message Processor initialized')
 
     def _process_message(self, action_verb: str, target_object: str) -> CommandResult:

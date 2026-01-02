@@ -7,14 +7,14 @@ import requests
 import pygame  # For MP3 playback
 import time
 import logging
-from timing_decorator import functime
+from src.utils import timing_decorator
 from typing import Optional, Callable
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-@functime
+@timing_decorator.functime
 def text_to_speech(
     text, voice_id="kdmDKE6EkgrWrrykO9Qt", api_key='Your ElevenLabs API key', 
     output_file="output.mp3", play_audio=True, 

@@ -15,15 +15,15 @@ from PyQt5.QtGui     import     QIcon
 from PyQt5.QtCore    import (
                                 Qt, pyqtSignal
                             )
-from UI_login_page        import LoginPage
-from UI_settings_page     import SettingPage
-from UI_sidebar import Sidebar
-from UI_Threads           import (
+from .login_page        import LoginPage
+from .settings_page     import SettingPage
+from .sidebar import Sidebar
+from .Threads import (
     AlarmMonitorThread, GrayscalingThreadMonitor,
 )
-from Custom_Title_Bar     import CustomTitleBar
-import functions
-import config
+from .Custom_Title_Bar     import CustomTitleBar
+from src.features import functions
+from src.core import config
 
 class MainWindow(QMainWindow):
     """

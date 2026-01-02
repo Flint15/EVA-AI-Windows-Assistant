@@ -3,7 +3,7 @@ import subprocess
 from pathlib import Path
 from difflib import SequenceMatcher
 from typing import Dict, Optional
-import config
+from src.core import config
 
 def load_exe_apps() -> Dict[str, str]:
     """Load the .exe apps from JSON file."""

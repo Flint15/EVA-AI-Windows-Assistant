@@ -3,7 +3,8 @@ import shutil
 import logging
 from pathlib import Path
 from PyQt5.QtCore import QMutexLocker
-import config, functions
+from src.core import config
+from src.features import functions
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

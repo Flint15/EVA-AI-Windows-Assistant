@@ -2,12 +2,11 @@ from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, 
     QLabel, QLineEdit, QPushButton,
     QMessageBox, QGraphicsDropShadowEffect,
-    QFrame, QSpacerItem, QSizePolicy
+    QFrame
 )
-from PyQt5.QtGui import QPixmap, QIcon, QFont, QColor, QPalette, QLinearGradient
-from PyQt5.QtCore import Qt, QPropertyAnimation, QEasingCurve, QPoint, pyqtSignal, QRect
+from PyQt5.QtGui import QFont, QColor
+from PyQt5.QtCore import Qt, pyqtSignal
 import logging
-from check_application_version import check_version
 
 class LoginPage(QWidget):
     """

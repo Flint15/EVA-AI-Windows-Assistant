@@ -1,13 +1,11 @@
 import os
-import config
 from rapidfuzz import process
 from typing import Union, Tuple
 import threading
 from threading import Thread
-import functions 
-import time
+from src.features import functions 
 import logging
-import config
+from src.core import config
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

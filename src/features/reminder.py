@@ -1,7 +1,7 @@
 import win32com.client
 import datetime
 import pythoncom
-import config
+from src.core import config
 def create_reminder(user_input:str):
     pythoncom.CoInitialize()
     try:

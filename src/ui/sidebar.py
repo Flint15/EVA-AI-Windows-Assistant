@@ -13,8 +13,8 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtGui     import     QIcon
 from PyQt5.QtCore    import     Qt, QSize
 import logging
-from UI_main_page         import Page
-import config
+from .main_page import Page
+from src.core import config
 
 # Icon file paths for UI elements
 ICON_PATHS = {
