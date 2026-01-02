@@ -2,19 +2,19 @@ import time
 import datetime
 import webbrowser
 import psutil
-import config
+from src.core import config
 import os
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume # For control_volume
 from comtypes import CLSCTX_ALL     
 import json
 from typing import Union, List, Dict, Optional
-import load_user_data
+from src.data import load_user_data
 from rapidfuzz import process
 import re
 import logging
 import threading
 import sched
-import tts
+from src.audio import tts
 import locale
 import screen_brightness_control as sbc
 import math_func

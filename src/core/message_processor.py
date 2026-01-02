@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from enum import Enum
-import config, functions
+from src.core import config
+from src.features import functions
 from typing import Union, List, Dict, Callable, Optional, Tuple
 import string
 import logging
@@ -9,9 +10,9 @@ from verb_object_extractor import Extractor
 import re
 from rapidfuzz import process, fuzz
 from threading import Thread
-from scaning import scan_for_program
-from reminder import create_reminder
-from reorganizer import reorganize_by_extension
+from src.features import  scaning
+from src.features import  reminder
+from src.features import  reorganizer
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

@@ -1,7 +1,7 @@
 import os
 import json
 import logging
-import config
+from src.core import config
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
