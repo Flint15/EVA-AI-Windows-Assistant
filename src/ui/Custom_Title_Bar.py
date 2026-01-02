@@ -40,17 +40,17 @@ class CustomTitleBar(QWidget):
 
 		# Create minimize button
 		self.minimize_button = QPushButton()
-		self.minimize_button.setIcon(QIcon('minimize.png'))
+		self.minimize_button.setIcon(QIcon('./assets/minimize.png'))
 		self.minimize_button.setStyleSheet('border: none; background-color: transparent;')
 
 		# Create maximize button
 		self.maximize_button = QPushButton()
-		self.maximize_button.setIcon(QIcon('maximize.png'))
+		self.maximize_button.setIcon(QIcon('./assets/maximize.png'))
 		self.maximize_button.setStyleSheet('border: none; background-color: transparent;')
 
 		# Create close button
 		self.close_button = QPushButton()
-		self.close_button.setIcon(QIcon('close.png'))
+		self.close_button.setIcon(QIcon('./assets/close.png'))
 		self.close_button.setStyleSheet('border: none; background-color: transparent;')
 
 		# Set up the layout
