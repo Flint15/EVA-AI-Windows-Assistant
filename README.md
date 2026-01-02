@@ -1,4 +1,5 @@
 # EVA: Windows AI Assistant – Capabilities Overview
+**works only partially**
 
 ## What is EVA?
 **EVA** is a powerful AI assistant for Windows, built with PyQt5. It combines voice recognition, natural language processing, and system automation to deliver a seamless desktop assistant experience. EVA understands both voice and text commands, automates system tasks, and interacts with multiple AI language models.
